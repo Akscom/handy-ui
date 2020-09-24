@@ -1,0 +1,51 @@
+.van-rate {
+  display: inline-flex;
+  cursor: pointer;
+  user-select: none;
+
+  &__item {
+    position: relative;
+
+    &:not(:last-child) {
+      padding-right: $rate-icon-gutter;
+    }
+  }
+  
+  &__icon {
+    display: block;
+    width: 1em;
+    color: $rate-icon-void-color;
+    font-size: $rate-icon-size;
+    // &--full {
+    //   color: $rate-icon-full-color;
+    // }
+    // &--disabled {
+    //   color: $rate-icon-disabled-color;
+    // }
+  }
+  &__half{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.5em;
+    overflow: hidden;
+  }
+  &__icon--full {
+    i {
+      color: $rate-icon-full-color;
+    }
+  }
+  &__icon--half {
+    .van-rate__half{
+      color: $rate-icon-full-color;
+    }  
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+  }
+
+  &--readonly {
+    cursor: default;
+  }
+}

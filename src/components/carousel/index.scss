@@ -1,0 +1,50 @@
+.za-carousel {
+  position: relative;
+  overflow: hidden;
+}
+.za-carousel--horizontal .za-carousel__items {
+  will-change: transform;
+  white-space: nowrap;
+}
+.za-carousel__item {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.carousel__item__pic img {
+  width: 100%;
+  height: auto;
+}
+.za-carousel--horizontal .za-carousel__items {
+  will-change: transform;
+  white-space: nowrap;
+}
+
+.za-carousel__pagination {
+  position: absolute;
+}
+
+.za-carousel--horizontal .za-carousel__pagination {
+  left: 50%;
+  bottom: 8px;
+  -webkit-transform: translate3d(-50%,0,0);
+  transform: translate3d(-50%,0,0);
+}
+
+
+.za-carousel__pagination__item {
+  background: hsla(0,0%,100%,.6);
+  cursor: pointer;
+  border-radius: 1px;
+  width: 19px;
+  height: 4px;
+  display: inline-block;
+}
+
+.za-carousel--horizontal .za-carousel__pagination__item:not(:last-child) {
+  margin-right: 2px;
+}
+
+.za-carousel__pagination__item--active {
+  background: #fff;
+}

@@ -1,0 +1,114 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body{
+  background: pink;
+} */
+
+/* .van-popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .75);
+  z-index: 10;
+} */
+/*
+.box {
+  width: 100%;
+  height: 200px;
+} 
+
+
+ 
+.alert-enter {
+  background-color: rgba(0, 0, 0, 0);
+}
+.alert-enter-active {
+  background-color: rgba(0, 0, 0, .75);
+  transition: background-color 300ms;
+}
+.alert-exit {
+  background-color: rgba(0, 0, 0, .75);
+}
+.alert-exit-active {
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 300ms;
+}
+.alert-enter .box {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.alert-enter-active .box {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 300ms;
+}
+.alert-exit .box {
+  opacity: 1;
+  transform: scale(1);
+}
+.alert-exit-active .box {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 300ms;
+}
+
+
+body { 
+  background-color: #f2f2f2;
+}
+
+.demo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.demo-item {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: chartreuse;
+  margin-bottom: 10px;
+} */
