@@ -1,4 +1,4 @@
-.van-radio {
+.ha-radio {
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -24,7 +24,7 @@
     line-height: 1em;
     cursor: pointer;
 
-    .van-icon {
+    .ha-icon {
       display: block;
       box-sizing: border-box;
       width: 1.25em;
@@ -39,13 +39,13 @@
     }
 
     &--round {
-      .van-icon {
+      .ha-icon {
         border-radius: 100%;
       }
     }
 
     &--checked {
-      .van-icon {
+      .ha-icon {
         color: $white;
         background-color: $radio-checked-icon-color;
         border-color: $radio-checked-icon-color;
@@ -55,14 +55,14 @@
     &--disabled {
       cursor: not-allowed;
 
-      .van-icon {
+      .ha-icon {
         background-color: $radio-disabled-background-color;
         border-color: $radio-disabled-icon-color;
       }
     }
 
     &--disabled, &--checked {
-      .van-icon {
+      .ha-icon {
         color: $radio-disabled-icon-color;
       }
     }
@@ -83,7 +83,7 @@
   }
 }
 
-.van-radio-group {
+.ha-radio-group {
   &--horizontal {
     display: flex;
     flex-wrap: wrap;

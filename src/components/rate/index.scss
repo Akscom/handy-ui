@@ -1,4 +1,4 @@
-.van-rate {
+.ha-rate {
   display: inline-flex;
   cursor: pointer;
   user-select: none;
@@ -36,7 +36,7 @@
     }
   }
   &__icon--half {
-    .van-rate__half{
+    .ha-rate__half{
       color: $rate-icon-full-color;
     }  
   }

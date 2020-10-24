@@ -70,7 +70,7 @@ const TabBar:FC<PropsType>=(props)=>{
 
     const renderTabs = (t: any, i: number, size: number) => {
         const textStyle = { ...tabBarTextStyle } as React.CSSProperties;
-        let cls = `am-tabs-default-bar-tab`;
+        let cls = `ha-tabs-default-bar-tab`;
         let ariaSelected = false;
         if (activeIndex === i) {
           cls += ` ${cls}-active`;
@@ -98,22 +98,22 @@ const TabBar:FC<PropsType>=(props)=>{
         </div>;
       }
     return (
-        <div className="am-tabs-default-bar am-tabs-default-bar-animated am-tabs-default-bar-top" style={{backgroundColor: 'rgb(255, 255, 255)'}}>
-           <div className="am-tabs-default-bar-prevpage"></div>
+        <div className="ha-tabs-default-bar ha-tabs-default-bar-animated ha-tabs-default-bar-top" style={{backgroundColor: 'rgb(255, 255, 255)'}}>
+           <div className="ha-tabs-default-bar-prevpage"></div>
            <Drag
             // onDragStart={handleOnDragStart}
             // onDragMove={handleOnDragMove}
             onDragEnd={handleOnDragEnd}
           >
-           <div  className="am-tabs-default-bar-content" style={{transform: `translate3d(${translate}, 1px)`, transitionDuration:'0.3s'}}>
+           <div  className="ha-tabs-default-bar-content" style={{transform: `translate3d(${translate}, 1px)`, transitionDuration:'0.3s'}}>
               { tabs.map((t:any, i:number) => {
                       return renderTabs(t, i, size);
                 })
               }
-              <div className="am-tabs-default-bar-underline" style={{width: `${size}%`, left: `${size * activeIndex}%`, ...underlineStyle}}></div>
+              <div className="ha-tabs-default-bar-underline" style={{width: `${size}%`, left: `${size * activeIndex}%`, ...underlineStyle}}></div>
           </div>  
           </Drag>
-          <div className="am-tabs-default-bar-nextpage"></div>
+          <div className="ha-tabs-default-bar-nextpage"></div>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-.van-stepper {
+.ha-stepper {
   font-size: 0;
   user-select: none;
 
@@ -93,12 +93,12 @@
   }
 
   &--round {
-    .van-stepper__input {
+    .ha-stepper__input {
       background-color: transparent;
     }
 
-    .van-stepper__plus,
-    .van-stepper__minus {
+    .ha-stepper__plus,
+    .ha-stepper__minus {
       border-radius: 100%;
 
       &:active {
@@ -113,12 +113,12 @@
       }
     }
 
-    .van-stepper__plus {
+    .ha-stepper__plus {
       color: $white;
       background-color: $stepper-button-round-theme-color;
     }
 
-    .van-stepper__minus {
+    .ha-stepper__minus {
       color: $stepper-button-round-theme-color;
       background-color: $white;
       border: 1px solid $stepper-button-round-theme-color;

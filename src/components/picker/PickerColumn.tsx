@@ -204,7 +204,7 @@ const PickerColumn:FC<PickerColumnProps>=(props)=>{
   }
 
   return (
-    <div className="van-picker-column">
+    <div className="ha-picker-column">
         <div className="ui-picker-wrapper" onTouchStart={handleWrapperStart}>
         <div className="ui-picker"
             style={transformStyle}

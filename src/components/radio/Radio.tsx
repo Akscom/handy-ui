@@ -61,25 +61,25 @@ const Radio:FC<IRadioProps>=(props)=>{
     }
   }
 
-  const classes = classNames('van-radio',{
-    [`van-checkbox--disabled`]: disabled,
-    [`van-radio--horizontal`]: groupCtx && groupCtx.direction === 'horizontal'
-    // [`van-checkbox--label-disabled`]: labelDisabled
+  const classes = classNames('ha-radio',{
+    [`ha-checkbox--disabled`]: disabled,
+    [`ha-radio--horizontal`]: groupCtx && groupCtx.direction === 'horizontal'
+    // [`ha-checkbox--label-disabled`]: labelDisabled
   })
-  const iconClasses=classNames('van-radio__icon  ',{
-      [`van-radio__icon--round`]: shape!=='square',
-      [`van-radio__icon--square`]: shape==='square',
-      [`van-radio__icon--checked`]: checked,
-      [`van-checkbox__icon--disabled`]: disabled
+  const iconClasses=classNames('ha-radio__icon  ',{
+      [`ha-radio__icon--round`]: shape!=='square',
+      [`ha-radio__icon--square`]: shape==='square',
+      [`ha-radio__icon--checked`]: checked,
+      [`ha-checkbox__icon--disabled`]: disabled
   })
   const colorStyle = {borderColor: checked? checkedColor:'',backgroundColor:checked? checkedColor:''}
   
   const radioRender = (
       <div role="radio" className={classes}  tab-index="-1" aria-checked={!!checked} onClick={onChangeVal} >
         <div className={iconClasses}  style={{fontSize: iconSize}}>
-          <i className="van-icon van-icon-success" style={colorStyle}></i>
+          <i className="ha-icon ha-icon-success" style={colorStyle}></i>
         </div>
-        {groupCtx && groupCtx.type === 'cell'?null: children !== undefined &&<span className="van-radio__label">{children}</span> }
+        {groupCtx && groupCtx.type === 'cell'?null: children !== undefined &&<span className="ha-radio__label">{children}</span> }
     </div>
   )
 
@@ -90,28 +90,6 @@ const Radio:FC<IRadioProps>=(props)=>{
         </Cell>
     );
   }
-
-  // return (
-  //   <label className = 'zent-radio-wrap'  aria-checked={!!checked} onClick={onChangeVal} 
-  //     style={{width:'200px', display:'block'}}
-  //   >
-  //     <span className="zent-radio">
-  //       <span className="zent-radio-inner" />
-  //       {/* <input
-  //         type="radio"
-  //         checked={!!checked}
-  //         disabled={disabled}
-  //         readOnly={readOnly}
-  //         onChange={onChangeVal}
-  //       /> */}
-  //     </span>
-  //     {children !== undefined && (
-  //       <span className="zent-radio-label" >
-  //         {children}
-  //       </span>
-  //     )}
-  //   </label>
-  // )
   return radioRender
 }
 

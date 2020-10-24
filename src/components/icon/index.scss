@@ -1,7 +1,8 @@
 // $import '../style/var';
 // $import '~$vant/icons/src/index.less';
+@import "../../styles/iconFont";
 
-.van-icon {
+.ha-icon {
   &__image {
     width: 1em;
     height: 1em;
@@ -9,7 +10,7 @@
   }
 }
 
-.van-info {
+.ha-info {
   position: absolute;
   top: 0;
   right: 0;

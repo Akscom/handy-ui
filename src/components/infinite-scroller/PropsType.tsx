@@ -1,5 +1,5 @@
 import { CSSProperties } from 'react';
-import { Locale } from '../locale-provider/PropsType';
+// import { Locale } from '../locale-provider/PropsType';
 
 export enum REFRESH_STATE {
   normal,   // 普通
@@ -33,5 +33,6 @@ export interface PropsType {
   load?: PullAction;
   animationDuration?: number;
   stayTime?: number;
-  locale?: Locale['Pull'];
+  // locale?: Locale['Pull'];
+  locale?: any
 }

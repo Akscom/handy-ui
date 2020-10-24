@@ -33,11 +33,6 @@ const CheckboxGroup:FC<ICheckboxGroupProps>=(props)=>{
     isValueEqual= Object.is,
     onChange,
   } = props;
-  // context!: IDisabledContext;
-
-  // useEffect(()=>{
-  //   console.log(disabled)
-  // })
 
  const getGroupContext = (
       maybeValue: any[] | unknown,
@@ -82,10 +77,10 @@ const CheckboxGroup:FC<ICheckboxGroupProps>=(props)=>{
     onChange(value);
   };
 
-    const classes = classNames(`van-checkbox-group`,
+    const classes = classNames(`ha-checkbox-group`,
       {
         // [`${prefix}-checkbox-group`]: true,
-        [`van-checkbox-group--horizontal`]: direction==='horizontal'
+        [`ha-checkbox-group--horizontal`]: direction==='horizontal'
       },
       className
     );

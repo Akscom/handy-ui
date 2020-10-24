@@ -1,5 +1,4 @@
 ```jsx
-
 import React, { useState, useEffect } from 'react';
 import Checkbox from './components/checkbox/Checkbox'
 import CheckboxGroup from './components/checkbox/Group'

@@ -34,7 +34,7 @@ describe('test menu and menuItem component', ()=>{
     })
     it('should render correct menu and menuItem based on default props', ()=>{
         expect(menuElement).toBeInTheDocument()
-        expect(menuElement).toHaveClass('viking-menu test')
+        expect(menuElement).toHaveClass('ha-menu test')
         expect(menuElement.getElementsByTagName('li').length).toEqual(3)
         expect(activeElement).toHaveClass('menu-item is-active')
         expect(disabledElement).toHaveClass('menu-item is-disabled')

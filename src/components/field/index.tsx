@@ -4,7 +4,7 @@ import Icon from '../icon';
 
 type InputType = 'text'|'textarea'|'password'|'tel'|'digit'|'number'
 
-const  prefixCls = 'van'
+const  prefixCls = 'ha'
 export type InputEventHandler = (value?: string) => void;
 
 export interface InputProps {
@@ -105,11 +105,11 @@ const Field : FC<InputProps> =(props) =>{
     lengthCtrlProps.maxLength = maxlength || 300
 
     return (
-        <div className="van-cell van-field">
-            {leftIcon && <div className='van-field__left-icon' onClick={clickLeftIcon}><i className={`van-icon van-icon-${leftIcon}`}></i></div>}
+        <div className="ha-cell ha-field">
+            {leftIcon && <div className='ha-field__left-icon' onClick={clickLeftIcon}><i className={`ha-icon ha-icon-${leftIcon}`}></i></div>}
             {label && <div className={labelClasses} style={{width:labelWidth+'px'}}><span>{label}</span></div>}
             <div className={classes}>
-                <div className="van-field__body">
+                <div className="ha-field__body">
                    {type !== 'textarea'? 
                     <input 
                         ref={domRef} 
@@ -138,12 +138,12 @@ const Field : FC<InputProps> =(props) =>{
                     />
                    } 
                     {children}
-                    {rightIcon && <div className="van-field__right-icon" onClick={clickRightIcon}><i className={`van-icon van-icon-${rightIcon}`}></i></div>}
+                    {rightIcon && <div className="ha-field__right-icon" onClick={clickRightIcon}><i className={`ha-icon ha-icon-${rightIcon}`}></i></div>}
                     {clearable && (inputValue && inputValue.length>0)? <Icon name="clear" onClick={handleClear} /> : null}
                 </div>
                 {
-                  count ? <div className="van-field__word-limit">
-                        <span className="van-field__word-num">{characterLength}</span>/50
+                  count ? <div className="ha-field__word-limit">
+                        <span className="ha-field__word-num">{characterLength}</span>/50
                     </div>: null
                 }
                 

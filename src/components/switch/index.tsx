@@ -40,7 +40,7 @@ const Switch:FC<SwitchProps>=(props)=>{
   return (
       <>
         <div role="switch" aria-checked={_checked} className={classes} style={styles} onClick={onValueChange}>
-          <div className="van-switch__node"></div>
+          <div className="ha-switch__node"></div>
         </div>
       </>
   );
@@ -49,7 +49,7 @@ const Switch:FC<SwitchProps>=(props)=>{
 Switch.displayName = 'Switch';
 
 Switch.defaultProps = {
-    prefixCls: 'van-switch',
+    prefixCls: 'ha-switch',
     disabled: false,
     checked: false
 };

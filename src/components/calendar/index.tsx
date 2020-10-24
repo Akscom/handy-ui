@@ -177,7 +177,7 @@ const Calendar:FC<CalendarProps>=(props)=>{
 
 Calendar.displayName = 'Calendar';
 Calendar.defaultProps = {
-  prefixCls: 'za-calendar',
+  prefixCls: 'ha-calendar',
   multiple: false,
   min: new Date(),
   dateRender: (date: any) => date.getDate(),

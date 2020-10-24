@@ -1,53 +1,53 @@
 
-@keyframes van-slide-up-enter {
+@keyframes ha-slide-up-enter {
   from {
     transform: translate3d(0, 100%, 0);
   }
 }
 
-@keyframes van-slide-up-leave {
+@keyframes ha-slide-up-leave {
   to {
     transform: translate3d(0, 100%, 0);
   }
 }
 
-@keyframes van-slide-down-enter {
+@keyframes ha-slide-down-enter {
   from {
     transform: translate3d(0, -100%, 0);
   }
 }
 
-@keyframes van-slide-down-leave {
+@keyframes ha-slide-down-leave {
   to {
     transform: translate3d(0, -100%, 0);
   }
 }
 
-@keyframes van-slide-left-enter {
+@keyframes ha-slide-left-enter {
   from {
     transform: translate3d(-100%, 0, 0);
   }
 }
 
-@keyframes van-slide-left-leave {
+@keyframes ha-slide-left-leave {
   to {
     transform: translate3d(-100%, 0, 0);
   }
 }
 
-@keyframes van-slide-right-enter {
+@keyframes ha-slide-right-enter {
   from {
     transform: translate3d(100%, 0, 0);
   }
 }
 
-@keyframes van-slide-right-leave {
+@keyframes ha-slide-right-leave {
   to {
     transform: translate3d(100%, 0, 0);
   }
 }
 
-@keyframes van-fade-in {
+@keyframes ha-fade-in {
   from {
     opacity: 0;
   }
@@ -57,7 +57,7 @@
   }
 }
 
-@keyframes van-fade-out {
+@keyframes ha-fade-out {
   from {
     opacity: 1;
   }
@@ -67,7 +67,7 @@
   }
 }
 
-@keyframes van-rotate {
+@keyframes ha-rotate {
   from {
     transform: rotate(0deg);
   }
@@ -77,62 +77,62 @@
   }
 }
 
-.van-fade {
+.ha-fade {
   &-enter-active {
-    animation: $animation-duration-base van-fade-in both
+    animation: $animation-duration-base ha-fade-in both
       $animation-timing-function-enter;
   }
 
   &-leave-active {
-    animation: $animation-duration-base van-fade-out both
+    animation: $animation-duration-base ha-fade-out both
       $animation-timing-function-leave;
   }
 }
 
-.van-slide-up {
+.ha-slide-up {
   &-enter-active {
-    animation: van-slide-up-enter $animation-duration-base both
+    animation: ha-slide-up-enter $animation-duration-base both
       $animation-timing-function-enter;
   }
 
   &-leave-active {
-    animation: van-slide-up-leave $animation-duration-base both
+    animation: ha-slide-up-leave $animation-duration-base both
       $animation-timing-function-leave;
   }
 }
 
-.van-slide-down {
+.ha-slide-down {
   &-enter-active {
-    animation: van-slide-down-enter $animation-duration-base both
+    animation: ha-slide-down-enter $animation-duration-base both
       $animation-timing-function-enter;
   }
 
   &-leave-active {
-    animation: van-slide-down-leave $animation-duration-base both
+    animation: ha-slide-down-leave $animation-duration-base both
       $animation-timing-function-leave;
   }
 }
 
-.van-slide-left {
+.ha-slide-left {
   &-enter-active {
-    animation: van-slide-left-enter $animation-duration-base both
+    animation: ha-slide-left-enter $animation-duration-base both
       $animation-timing-function-enter;
   }
 
   &-leave-active {
-    animation: van-slide-left-leave $animation-duration-base both
+    animation: ha-slide-left-leave $animation-duration-base both
       $animation-timing-function-leave;
   }
 }
 
-.van-slide-right {
+.ha-slide-right {
   &-enter-active {
-    animation: van-slide-right-enter $animation-duration-base both
+    animation: ha-slide-right-enter $animation-duration-base both
       $animation-timing-function-enter;
   }
 
   &-leave-active {
-    animation: van-slide-right-leave $animation-duration-base both
+    animation: ha-slide-right-leave $animation-duration-base both
       $animation-timing-function-leave;
   }
 }

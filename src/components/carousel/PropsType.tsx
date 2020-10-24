@@ -1,4 +1,4 @@
-import { ReactNode, CSSProperties } from 'react';
+import { ReactNode, CSSProperties, RefObject } from 'react';
 
 export default interface PropsType {
   direction?: 'left' | 'right' | 'up' | 'down';
@@ -16,4 +16,7 @@ export default interface PropsType {
   onChangeEnd?: (activeIndex?: number) => void;
   children: ReactNode[];
   style?: CSSProperties;
+  // refs: RefObject<HTMLDivElement>
+  slideToNum?: number
+  jumpToNum?: number
 }

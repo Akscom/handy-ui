@@ -37,7 +37,7 @@ const SubMenu:React.FC<SubMenuProps> = ({index, title, children, className})=>{
     onMouseLeave: (e: React.MouseEvent) => { handleMouse(e, false)}
   } : {}
   const renderChildren = () =>{ // 渲染下拉菜单里的内容
-    const subMenuClasses = classNames('viking-submenu', {
+    const subMenuClasses = classNames('ha-submenu', {
       'menu-opened': menuOpen
     })
     const childrenComponent = React.Children.map(children,(child, i)=>{

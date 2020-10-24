@@ -3,9 +3,9 @@ $skeleton-margin-bottom : 20px;
 // background color
 $skeleton-bg-bgcolor : rgba(31,56,88,.06);
 $skeleton-middle-bgcolor : rgba(31,56,88,.1);
-$prefix: '.t' ;
+$prefix: 'ha-' ;
 
-@keyframes salt-skeleton-loading {
+@keyframes ha-skeleton-loading {
     0% {
         background-position: 100% 50%;
     }
@@ -15,41 +15,41 @@ $prefix: '.t' ;
     }
 }
 
-.skeleton-loading {
+.#{$prefix}skeleton-loading {
     background: linear-gradient(90deg, $skeleton-bg-bgcolor 25%, $skeleton-middle-bgcolor 37%, $skeleton-bg-bgcolor 63%);
-    animation: salt-skeleton-loading 1.4s ease infinite;
+    animation: ha-skeleton-loading 1.4s ease infinite;
     background-size: 400% 100%;
 }
 
-.skeleton-element {
+.#{$prefix}skeleton-element {
     background-color: $skeleton-bg-bgcolor;
 }
 
-.skeleton-wrapper {
+.#{$prefix}skeleton-wrapper {
     padding: 0px 10px 10px 10px;
     margin-top: 10px;
     border-bottom: 1px solid #fff;
 }
 
-.skeleton-left-wrapper {
+.#{$prefix}skeleton-left-wrapper {
     display: table-cell;
     vertical-align: middle;
     padding-right: 10px;
 }
 
-.skeleton-right-wrapper {
+.#{$prefix}skeleton-right-wrapper {
     display: table-cell;
     vertical-align: middle;
     width: 100%;
 }
 
-.skeleton-circle {
+.#{$prefix}skeleton-circle {
     border-radius: 50%;
     width: 50px;
     height: 50px;
 }
 
-.skeleton-text-bar {
+.#{$prefix}skeleton-text-bar {
     width: 100%;
     height: 14px;
     margin-bottom: 12px;
@@ -61,32 +61,32 @@ $prefix: '.t' ;
     }
 }
 
-.skeleton-image-small {
+.#{$prefix}skeleton-image-small {
     width: 110px;
     height: 72px;
     border-radius: $skeleton-radius;
 }
 
-.skeleton-image-big {
+.#{$prefix}skeleton-image-big {
     width: 100%;
     height: 120px;
     margin-bottom: $skeleton-margin-bottom;
     border-radius: $skeleton-radius;
 }
 
-.skeleton-operation-bar {
+.#{$prefix}skeleton-operation-bar {
     width: 100%;
     height: 20px;
 }
 
-.skeleton-operation-left {
+.#{$prefix}skeleton-operation-left {
     width: 48%;
     height: 20px;
     display: inline-block;
     border-radius: $skeleton-radius;
 }
 
-.skeleton-operation-mid {
+.#{$prefix}skeleton-operation-mid {
     width: 20%;
     height: 20px;
     margin: 0 6% 0 6%;
@@ -94,7 +94,7 @@ $prefix: '.t' ;
     border-radius: $skeleton-radius;
 }
 
-.skeleton-operation-right {
+.#{$prefix}skeleton-operation-right {
     width: 20%;
     height: 20px;
     display: inline-block;

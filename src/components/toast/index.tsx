@@ -43,54 +43,7 @@ export interface ToastProps extends PropsType {
   
 const contentIsToastProps = (content:any): content is ToastProps => typeof content === 'object' && 'content' in content;
 
-// const Toast:FC<ToastProps>=(props)=>{
-
-  
-    // componentWillUnmount() {
-    //   clearTimeout(this.timer);
-    // }
-
-   
-    
-    // const hide = () => {
-    //     if (zarmToast) {
-    //       ReactDOM.render(
-    //         <Toast visible={false} />,
-    //         zarmToast,
-    //       );
-    //     }
-    // };
-    
-    // const unmountNode = () => {
-    //     if (zarmToast) {
-    //       ReactDOM.render(<></>, zarmToast);
-    //       toastContainer.removeChild(zarmToast);
-    //       zarmToast = null;
-    //     }
-    // };
-
-
-
-
-    // const autoClose=()=>{
-    //     if ((duration as number) > 0) {
-    //     timer = setTimeout(() => {
-    //         _hide();
-    //         clearTimeout(timer);
-    //     }, duration);
-    //     }
-    // }
-// }
-
-
-
-// export default Toast
-
-// function notice(props) {
-
-
-let zarmToast: HTMLDivElement | null;
-// let [toastContainer, setToastContainer] = useState(null)
+let handyToast: HTMLDivElement | null;
 
 let toastContainer: HTMLElement;
     
@@ -99,7 +52,7 @@ let timer:any;
 const defaultProps = {
   // duration: SHORT,
   // mask: true,
-  prefixCls: 'za-toast',
+  prefixCls: 'ha-toast',
   visible: false,
   duration: 3000,
   mask: false,
@@ -107,33 +60,16 @@ const defaultProps = {
 };
 
 const unmountNode = () => {
-  if (zarmToast) {
-    ReactDOM.render(<></>, zarmToast);
-    toastContainer.removeChild(zarmToast);
-    zarmToast = null;
+  if (handyToast) {
+    ReactDOM.render(<></>, handyToast);
+    toastContainer.removeChild(handyToast);
+    handyToast = null;
   }
 };
 
 const Toast:FC<ToastProps>=(props)=>{
     let nProps = Object.assign(defaultProps, props)
     const {prefixCls, visible, mask, className, duration, type, content, afterClose, ...others } = nProps;
-    console.log(mask)
-//     // const autoClose=()=>{
-//     //     if ((duration as number) > 0) {
-//     //     timer = setTimeout(() => {
-//     //         _hide();
-//     //         clearTimeout(timer);
-//     //     }, duration);
-//     //     }
-//     // }
-
-//     const handleAfterClose = () => {
-//         // if (zarmToast) {
-//         // toastContainer.removeChild(zarmToast);
-//         // zarmToast = null;
-//         // }
-//         // afterClose && afterClose();
-//     };
     const handleAfterClose=()=>{
       unmountNode()
       afterClose && afterClose()
@@ -161,29 +97,26 @@ const Toast:FC<ToastProps>=(props)=>{
     )
 }
 
-//  van-toast--middle van-toast--loading
 const show = function ( content: any, )  {
     unmountNode();
     const {duration, type} = content
-    if (!zarmToast) {
-        zarmToast = document.createElement('div') 
-        zarmToast.classList.add('za-toast-container')
-        // zarmToast.classList.add('van-toast','van-toast--middle');
-        // zarmToast.classList.add(`van-toast--${type}`)
+    if (!handyToast) {
+        handyToast = document.createElement('div') 
+        handyToast.classList.add('ha-toast-container')
       if (contentIsToastProps(content) && content.className) {
-        zarmToast.classList.add(content.className);
+        handyToast.classList.add(content.className);
       }
       
       toastContainer = contentIsToastProps(content) ? domUtil.getMountNode(content.getContainer) : domUtil.getMountNode();
-      toastContainer.appendChild(zarmToast);
+      toastContainer.appendChild(handyToast);
     }
-    if (zarmToast) {
+    if (handyToast) {
       const props = contentIsToastProps(content)
-        ? { ...defaultProps, ...content, ...{ visible: true, getContainer: zarmToast } }
-        : { ...defaultProps, ...{ visible: true, getContainer: zarmToast, content } };
+        ? { ...defaultProps, ...content, ...{ visible: true, getContainer: handyToast } }
+        : { ...defaultProps, ...{ visible: true, getContainer: handyToast, content } };
       ReactDOM.render(
         <Toast {...props} />,
-        zarmToast,
+        handyToast,
       );
 
       if((duration as number) > 0){
@@ -195,14 +128,11 @@ const show = function ( content: any, )  {
     }
 };
 
-
-
-
 const hide = () => {
-    if (zarmToast) {
+    if (handyToast) {
       ReactDOM.render(
         <Toast visible={false} />,
-        zarmToast,
+        handyToast,
       );
     }
 };

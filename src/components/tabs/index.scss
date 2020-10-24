@@ -4,7 +4,7 @@ $tabs-color: #108ee9;
 $page-hide-color: rgba(255, 255, 255, 0);
 $page-show-color: rgba(255, 255, 255, 1);
 
-.am-tabs{
+.ha-tabs{
     box-sizing: border-box;
     * {
       box-sizing: border-box;
@@ -40,7 +40,7 @@ $page-show-color: rgba(255, 255, 255, 1);
     }
   
     &-horizontal {
-        .am-tabs {
+        .ha-tabs {
         &-pane-wrap-active {
           height: auto;
         }
@@ -53,7 +53,7 @@ $page-show-color: rgba(255, 255, 255, 1);
     }
   
     &-vertical {
-        .am-tabs{
+        .ha-tabs{
         &-content-wrap {
           flex-direction: column;
         }
@@ -101,7 +101,7 @@ $page-show-color: rgba(255, 255, 255, 1);
     z-index: 1;
   }
   
-.am-tabs-default-bar {
+.ha-tabs-default-bar {
     position: relative;
     display: flex;
     flex-shrink: 0;
@@ -147,7 +147,7 @@ $page-show-color: rgba(255, 255, 255, 1);
     &-bottom {
       flex-direction: row;
   
-      .am-tabs-default-bar{
+      .ha-tabs-default-bar{
         &-content {
           display: flex;
           width: 100%;
@@ -190,7 +190,7 @@ $page-show-color: rgba(255, 255, 255, 1);
     &-right {
       flex-direction: column;
   
-      .am-tabs-default-bar{
+      .ha-tabs-default-bar{
         &-content {
           display: flex;
           height: 100%;
@@ -206,7 +206,7 @@ $page-show-color: rgba(255, 255, 255, 1);
     &-left {
       border-right: 1px #eee solid;
   
-      .am-tabs-default-bar {
+      .ha-tabs-default-bar {
         &-underline {
           right: 0;
         }
@@ -216,7 +216,7 @@ $page-show-color: rgba(255, 255, 255, 1);
     &-right {
       border-left: 1px #eee solid;
   
-      .am-tabs-default-bar {
+      .ha-tabs-default-bar {
         &-underline {
           left: 0;
         }

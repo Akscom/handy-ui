@@ -1,4 +1,3 @@
-
 import React, {FC, useEffect, useState} from 'react';
 import classNames from 'classnames'
 import TabBar from './TabBar'
@@ -83,8 +82,8 @@ const Tabs:FC<PropsType>=(props)=>{
         const value = `${-activeIndex * 100}%`;
         const translate = `${value}, 0px`;
         const styles:React.CSSProperties = animated ? {transform: `translate3d(${translate}, 1px)`} : {position: `relative`, left: `${-activeIndex * 100}%`}
-        const classes = classNames('am-tabs-content-wrap', {
-          'am-tabs-content-wrap-animated': animated
+        const classes = classNames('ha-tabs-content-wrap', {
+          'ha-tabs-content-wrap-animated': animated
         })
         return  (
           <div className={classes} style={styles}>
@@ -92,9 +91,9 @@ const Tabs:FC<PropsType>=(props)=>{
                 tabs.map((tab:any, index:number) => {
                     // tabCache[index] = getSubElement(index);
                     tabCache[index] = getSubElement(tab, index, getSubElements());
-                    const cls = classNames('am-tabs-pane-wrap', {
-                      [`am-tabs-pane-wrap-active`]: index === activeIndex,
-                      [`am-tabs-pane-wrap-inactive`]: index !== activeIndex
+                    const cls = classNames('ha-tabs-pane-wrap', {
+                      [`ha-tabs-pane-wrap-active`]: index === activeIndex,
+                      [`ha-tabs-pane-wrap-inactive`]: index !== activeIndex
                     })
                     listItem.push(<TabPane className={cls} key={`tab_${index}`}>{tabCache[index]}</TabPane>)
                 })
@@ -124,7 +123,7 @@ const Tabs:FC<PropsType>=(props)=>{
 }
 
 Tabs.defaultProps={
-    prefixCls: 'am-tabs',
+    prefixCls: 'ha-tabs',
     animated: false
 }
 

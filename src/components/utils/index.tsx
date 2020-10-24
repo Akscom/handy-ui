@@ -25,3 +25,16 @@ export const isValidKey=(key: any, obj: {[propName: string]: any}): key is keyof
 export function isDef(val: any): boolean {
   return val !== undefined && val !== null;
 }
+
+
+export function isFunction(val: unknown): val is Function {
+  return typeof val === 'function';
+}
+
+export function isObject(val: any): val is Record<any, any> {
+  return val !== null && typeof val === 'object';
+}
+
+export function isPromise<T = any>(val: unknown): val is Promise<T> {
+  return isObject(val) && isFunction(val.then) && isFunction(val.catch);
+}

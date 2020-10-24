@@ -24,10 +24,9 @@ class SkeletonElement extends React.Component {
       ...others
     } = this.props;
     return (
-      <div className={classnames(`skeleton-element${animate ? ' skeleton-loading' : ''} ${className}`)} {...others} />
+      <div className={classnames(`ha-skeleton-element${animate ? ' ha-skeleton-loading' : ''} ${className}`)} {...others} />
     );
   }
 }
 
-// module.exports = SkeletonElement;
 export default SkeletonElement

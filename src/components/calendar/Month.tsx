@@ -181,7 +181,7 @@ const CalendarMonthView:FC<CalendarMonthProps>=(props,state)=>{
 }
 
 CalendarMonthView.defaultProps = {
-    prefixCls: 'za-calendar',
+    prefixCls: 'ha-calendar',
     value: [],
     dateMonth: new Date(),
     min: new Date(),

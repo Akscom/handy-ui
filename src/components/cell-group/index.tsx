@@ -11,8 +11,8 @@ const CellGroup:FC<CellGroupProps>=(props)=>{
 
     return ( 
         <>
-        {title?<div className="van-cell-group__title">{title}</div>:null}
-        <div className="van-cell-group van-hairline--top-bottom">
+        {title?<div className="ha-cell-group__title">{title}</div>:null}
+        <div className="ha-cell-group ha-hairline--top-bottom">
            {children}
         </div>
         </>

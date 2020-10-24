@@ -12,7 +12,6 @@ const Sidebar:FC<SidebarProps>=(props)=>{
     const [_activeIndex, setActiveIndex] = useState(activeIndex)
 
     let cloneChildren = React.Children.map(children, (child:any, index)=>{
-        // console.log(child.props)
         // const childElement = child as React.FunctionComponentElement<SidebarItemProps>  // 类型断言
         if (child) {
           return React.cloneElement(child, {
@@ -27,7 +26,7 @@ const Sidebar:FC<SidebarProps>=(props)=>{
     })
 
     return (
-        <div className={classNames(['van-sidebar', className])} {...restProps}>
+        <div className={classNames(['ha-sidebar', className])} {...restProps}>
             {cloneChildren}
         </div>
     )

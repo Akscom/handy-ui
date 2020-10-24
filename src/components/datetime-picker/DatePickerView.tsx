@@ -406,7 +406,7 @@ const DatePickerView:FC<DatePickerViewProps>=( props )=>{
 
     return (
       <>
-        <div className="van-picker__columns">
+        <div className="ha-picker__columns">
           {getColumns()}
         </div>
       </>

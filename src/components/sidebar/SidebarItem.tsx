@@ -11,22 +11,13 @@ export interface SidebarItemProps{
 
 const SidebarItem:FC<SidebarItemProps>=(props)=>{
     const {title, isActive, dot, badge, ...restProps} = props
-    // const classes = classNames('van-sidebar-item',{
-    //     [`van-sidebar-item--select`]:activeIndex 
-    //   }
-    // )
-
-    // useEffect(()=>{
-    //     console.log(dot)
-    //     console.log(badge)
-    // },[])
-    let cls = classNames(['van-sidebar-item', {'van-sidebar-item--select': isActive}])
+    let cls = classNames(['ha-sidebar-item', {'ha-sidebar-item--select': isActive}])
     return (
         <>
             <div  className={cls} {...restProps}>
-                <div className="van-sidebar-item__text">{title}
-                    {dot?<div className="van-info van-info--dot van-sidebar-item__info"></div>:''}
-                    {badge?<div className="van-info van-sidebar-item__info">{badge}</div>:''}
+                <div className="ha-sidebar-item__text">{title}
+                    {dot?<div className="ha-info ha-info--dot ha-sidebar-item__info"></div>:''}
+                    {badge?<div className="ha-info ha-sidebar-item__info">{badge}</div>:''}
                 </div>
             </div>
         </>

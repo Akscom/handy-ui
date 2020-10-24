@@ -1,14 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import GroupContext, { IRadioContext } from './GroupContext';
-// import { IRadioEvent } from './AbstractRadio';
-
-// export interface IRadioEvent<Value> extends Omit<React.ChangeEvent<HTMLInputElement>, 'target'> {
-//   target: {
-//     type: 'radio';
-//     checked: boolean;
-//   } & IRadioProps<Value>;
-// }
 
 export interface IRadioGroupProps {
   value?: any;
@@ -50,10 +42,10 @@ export function RadioGroup(props: IRadioGroupProps) {
     [value, disabled, readOnly, direction, type, isValueEqual, onChange]
   );
 
-  const classes = classNames(`van-radio-group`,
+  const classes = classNames(`ha-radio-group`,
     {
       // [`${prefix}-checkbox-group`]: true,
-      [`van-radio-group--horizontal`]: direction==='horizontal'
+      [`ha-radio-group--horizontal`]: direction==='horizontal'
     },
     className
   );

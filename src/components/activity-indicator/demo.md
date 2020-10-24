@@ -3,7 +3,7 @@
 ## 基本用法
 
 ```jsx
-import { Cell, ActivityIndicator } from 'zarm';
+import ActivityIndicator from './components/activity-indicator';
 
 ReactDOM.render(
   <>

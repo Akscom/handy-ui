@@ -1,123 +1,106 @@
 # Drag 拖拽
 
-
-
 ## 基本用法
-
 ```jsx
-import { Drag, Button } from 'zarm';
+import React, { useEffect, useState, useRef } from 'react';
+import Drag from './components/drag'
 
-class Demo extends React.Component {
-  currentX = 0;
+let currentPoint = [0, 0];
 
-  currentY = 0;
+const App = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const boxRef = useRef<HTMLDivElement>(null);
+  const [point, setPoint] = useState([0, 0]);
+  const [drag, setDrag] = useState(false);
 
-  state = {
-    x: 0,
-    y: 0,
-    drag: false,
+  useEffect(() => {
+    if(boxRef && boxRef.current && containerRef && containerRef.current){
+      const { width, height } = boxRef.current.getBoundingClientRect() ;
+      const { width: containerWidth, height: containerHeight } = containerRef.current.getBoundingClientRect();
+      currentPoint[0] = Math.round(Math.random() * (containerWidth - width));
+      currentPoint[1] = Math.round(Math.random() * (containerHeight - height));
+    }
+    setPoint(currentPoint);
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
+  const onDragStart = (event:any, dragState:any) => {
+    console.log('onDragStart', dragState);
+    setDrag(true);
   };
 
-  componentDidMount() {
-    const { width, height } = this.box.getBoundingClientRect();
-    const { width: containerWidth, height: containerHeight } = this.container.getBoundingClientRect();
-
-    this.currentX = Math.round(Math.random() * (containerWidth - width));
-    this.currentY = Math.round(Math.random() * (containerHeight - height));
-
-    this.setState({
-      x: this.currentX,
-      y: this.currentY,
-    });
-  }
-
-  onDragStart = (event, dragState) => {
-    console.log('onDragStart', dragState);
-
-    this.setState({
-      drag: true,
-    });
-  }
-
-  onDragMove = (event, dragState) => {
+  const onDragMove = (event:any, dragState:any) => {
     console.log('onDragMove', dragState);
 
-    const { width, height } = this.box.getBoundingClientRect();
-    const { width: containerWidth, height: containerHeight } = this.container.getBoundingClientRect();
+    if(boxRef && boxRef.current && containerRef && containerRef.current && dragState.offsetX  && dragState.offsetY){
+      const { width, height } = boxRef.current.getBoundingClientRect();
+      const { width: containerWidth, height: containerHeight } = containerRef.current.getBoundingClientRect();
 
-    let newX = this.currentX + dragState.offsetX;
-    let newY = this.currentY + dragState.offsetY;
+      let newX = currentPoint[0] + dragState.offsetX;
+      let newY = currentPoint[1] + dragState.offsetY;
 
-    if (newX < 0) {
-      newX = 0;
-    }
-    if (newX > containerWidth - width) {
-      newX = containerWidth - width;
-    }
-    if (newY < 0) {
-      newY = 0;
-    }
-    if (newY > containerHeight - height) {
-      newY = containerHeight - height;
-    }
+      if (newX < 0) {
+        newX = 0;
+      }
+      if (newX > containerWidth - width) {
+        newX = containerWidth - width;
+      }
+      if (newY < 0) {
+        newY = 0;
+      }
+      if (newY > containerHeight - height) {
+        newY = containerHeight - height;
+      }
 
-    this.setState({
-      x: newX,
-      y: newY,
-    });
-
+      setPoint([newX, newY]);
+    }
     return true;
-  }
+  };
 
-  onDragEnd = (event, dragState) => {
+  const onDragEnd = (event:any, dragState: any) => {
     console.log('onDragEnd', dragState);
+    currentPoint = point;
+    setDrag(false);
+  };
 
-    const { x, y } = this.state;
-    this.currentX = x;
-    this.currentY = y;
-
-    this.setState({
-      drag: false,
-    });
-  }
-
-  render() {
-    const { x, y, drag } = this.state;
-
-    return (
-      <div
-        ref={(el) => { this.container = el; }}
-        style={{
-          height: 300,
-          backgroundColor: '#ddd',
-          position: 'relative'
-        }}
+  return (
+    <div
+      ref={containerRef}
+      style={{
+        height: 300,
+        backgroundColor: '#ddd',
+        position: 'relative'
+      }}
+    >
+      <Drag
+        onDragStart={onDragStart}
+        onDragMove={onDragMove}
+        onDragEnd={onDragEnd}
       >
-        <Drag
-          onDragStart={this.onDragStart}
-          onDragMove={this.onDragMove}
-          onDragEnd={this.onDragEnd}
+        <div
+          ref={boxRef}
+          style={{
+            display: 'inline-block',
+            transform: `translate3d(${point[0]}px, ${point[1]}px, 0)`,
+          }}
         >
-          <div
-            ref={(el) => { this.box = el; }}
-            style={{
-              display: 'inline-block',
-              transform: `translate3d(${x}px, ${y}px, 0)`,
-            }}
-          >
-            {
-              drag
-                ? <Button theme="danger">Let me go!</Button>
-                : <Button theme="primary">Catch me~</Button>
-            }
-          </div>
-        </Drag>
-      </div>
-    )
-  }
+          {
+            drag
+              ? <button>Let me go!</button>
+              : <button>Catch me~</button>
+          }
+        </div>
+        
+      </Drag>
+    </div>
+  );
 }
 
-ReactDOM.render(<Demo />, mountNode);
+export default App
 ```
 
 

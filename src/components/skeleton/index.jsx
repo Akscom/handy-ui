@@ -10,36 +10,36 @@ class Skeleton extends React.Component {
     const { animate } = this.props;
     if (type === 1) {
       return (
-        <div key={`${type}-${index}`} className={classnames('skeleton-wrapper')}>
-          <div className={classnames('skeleton-left-wrapper')}>
-            <Element className="skeleton-circle" animate={animate} />
+        <div key={`${type}-${index}`} className={classnames('ha-skeleton-wrapper')}>
+          <div className={classnames('ha-skeleton-left-wrapper')}>
+            <Element className="ha-skeleton-circle" animate={animate} />
           </div>
-          <div className={classnames('skeleton-right-wrapper')}>
-            <Element className="skeleton-text-bar" animate={animate} />
-            <Element className="skeleton-text-bar" animate={animate} />
+          <div className={classnames('ha-skeleton-right-wrapper')}>
+            <Element className="ha-skeleton-text-bar" animate={animate} />
+            <Element className="ha-skeleton-text-bar" animate={animate} />
           </div>
         </div>
       );
     } else if (type === 2) {
       return (
-        <div key={`${type}-${index}`} className={classnames('skeleton-wrapper')}>
-          <div className={classnames('skeleton-left-wrapper')}>
-            <Element className="skeleton-image-small" animate={animate} />
+        <div key={`${type}-${index}`} className={classnames('ha-skeleton-wrapper')}>
+          <div className={classnames('ha-skeleton-left-wrapper')}>
+            <Element className="ha-skeleton-image-small" animate={animate} />
           </div>
-          <div className={classnames('skeleton-right-wrapper')}>
-            <Element className="skeleton-text-bar" animate={animate} />
-            <Element className="skeleton-text-bar" animate={animate} />
+          <div className={classnames('ha-skeleton-right-wrapper')}>
+            <Element className="ha-skeleton-text-bar" animate={animate} />
+            <Element className="ha-skeleton-text-bar" animate={animate} />
           </div>
         </div>
       );
     } else if (type === 3) {
       return (
-        <div key={`${type}-${index}`} className={classnames('skeleton-wrapper')}>
-          <Element className="skeleton-image-big" animate={animate} />
-          <div className={classnames('skeleton-operation-bar')}>
-            <Element className="skeleton-operation-left" animate={animate} />
-            <Element className="skeleton-operation-mid" animate={animate} />
-            <Element className="skeleton-operation-right" animate={animate} />
+        <div key={`${type}-${index}`} className={classnames('ha-skeleton-wrapper')}>
+          <Element className="ha-skeleton-image-big" animate={animate} />
+          <div className={classnames('ha-skeleton-operation-bar')}>
+            <Element className="ha-skeleton-operation-left" animate={animate} />
+            <Element className="ha-skeleton-operation-mid" animate={animate} />
+            <Element className="ha-skeleton-operation-right" animate={animate} />
           </div>
         </div>
       );
@@ -85,41 +85,38 @@ Skeleton.propTypes = {
   className: PropTypes.string,
 };
 
-
 Skeleton.displayName = 'Skeleton';
 
-
-const traversal = (node, number) => {
-  const styleObj = pick(window.getComputedStyle(node, null), [
-    'width',
-    'height',
-    'borderRadius',
-    'position',
-    'top',
-    'bottom',
-    'left',
-    'right',
-    'marginTop',
-    'marginBottom',
-    'marginLeft',
-    'marginRight',
-    'paddingTop',
-    'paddingBottom',
-    'paddingLeft',
-    'paddingRight',
-    'display',
-    'flex',
-    'flexDirection']);
-  const traversalLevel = number || 4;
-  if (node.children.length > 0 && traversalLevel > 1) {
-    return `<div style={${JSON.stringify(styleObj)}}>${Array.prototype.map.call(node.children, item => (traversal(item, traversalLevel - 1))).join('')}</div>`;
-  }
-  return `<Element animate style={${JSON.stringify(styleObj)}}/>`;
-};
-
-window.node2skeleton = (node, number) => {
-  console.log(traversal(node, number));
-};
+// const traversal = (node, number) => {
+//   const styleObj = pick(window.getComputedStyle(node, null), [
+//     'width',
+//     'height',
+//     'borderRadius',
+//     'position',
+//     'top',
+//     'bottom',
+//     'left',
+//     'right',
+//     'marginTop',
+//     'marginBottom',
+//     'marginLeft',
+//     'marginRight',
+//     'paddingTop',
+//     'paddingBottom',
+//     'paddingLeft',
+//     'paddingRight',
+//     'display',
+//     'flex',
+//     'flexDirection']);
+//   const traversalLevel = number || 4;
+//   if (node.children.length > 0 && traversalLevel > 1) {
+//     return `<div style={${JSON.stringify(styleObj)}}>${Array.prototype.map.call(node.children, item => (traversal(item, traversalLevel - 1))).join('')}</div>`;
+//   }
+//   return `<Element animate style={${JSON.stringify(styleObj)}}/>`;
+// };
+// window.node2skeleton = (node, number) => {
+//   // console.log(traversal(node, number));
+// };
 
 polyfill(Skeleton);
 export default Skeleton

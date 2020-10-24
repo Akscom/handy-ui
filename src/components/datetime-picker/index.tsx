@@ -38,10 +38,10 @@ const DatePicker:FC<DatePickerProps>=(props)=>{
       // onMaskClick={handleOnCancel}
       direction="bottom"
     >
-      <div className="van-picker__toolbar">
-        <button type="button" className="van-picker__cancel" onClick={onCancel}>取消</button>
-        <div className="van-ellipsis van-picker__title">{title?title:'标题'}</div>
-        <button type="button" className="van-picker__confirm" onClick={handleOnConfirm}>确认</button>
+      <div className="ha-picker__toolbar">
+        <button type="button" className="ha-picker__cancel" onClick={onCancel}>取消</button>
+        <div className="ha-ellipsis ha-picker__title">{title?title:'标题'}</div>
+        <button type="button" className="ha-picker__confirm" onClick={handleOnConfirm}>确认</button>
       </div>
       <DatePickerView
        {...restProps}

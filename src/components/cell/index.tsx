@@ -18,32 +18,30 @@ export interface CellProps {
 const Cell:FC<CellProps>=(props)=>{
     const {title, value, label, icon, arrowDirection, center, isLink, onClick, children, ...restProps} = props
 
-    const classes = classNames('van-cell',{
-        [`van-cell--center`]:center,
+    const classes = classNames('ha-cell',{
+        [`ha-cell--center`]:center,
     })
-    const arrowClases = classNames('van-icon ',{
-        [`van-icon-arrow`]:isLink && !arrowDirection,
-        [`van-icon-arrow-${arrowDirection}`]: arrowDirection,
+    const arrowClases = classNames('ha-icon ',{
+        [`ha-icon-arrow`]:isLink && !arrowDirection,
+        [`ha-icon-arrow-${arrowDirection}`]: arrowDirection,
 
-    },'van-cell__right-icon')
+    },'ha-cell__right-icon')
 
     return ( 
         <div className={classes} onClick={onClick}>
-            {icon?<i className={`van-icon van-icon-${icon}`}></i>:null}
-            <div className="van-cell__title">
+            {icon?<i className={`ha-icon ha-icon-${icon}`}></i>:null}
+            <div className="ha-cell__title">
                 <span>{title}</span>
-                {label? <div className="van-cell__label">{label}</div>:null}
+                {label? <div className="ha-cell__label">{label}</div>:null}
             </div>
-           {value?<div className="van-cell__value">
+           {value?<div className="ha-cell__value">
                 <span>{value}</span>
             </div>:null} 
             {children ? children : null}
             {isLink?<i className={arrowClases}></i>:null}
         </div>
     )
-
 }
-
 
 Cell.defaultProps={
 }

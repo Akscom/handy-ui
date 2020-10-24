@@ -79,7 +79,7 @@ const Totop:FC<TotopProps>=(props)=>{
 Totop.displayName = 'Totop';
 
 Totop.defaultProps = {
-  prefixCls: 'za-back-to-top',
+  prefixCls: 'ha-back-to-top',
   speed: 100,
   visibleDistance: 400,
   scrollContainer: window,

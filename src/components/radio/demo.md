@@ -6,8 +6,7 @@
 1）父组件把conetxt的属性方法传递给子组件radio调用
 2) 直接在父组件里渲染子组件方法
 
-
-```
+```js
 import React, { useState, useEffect } from 'react';
 import Radio from './components/radio/Radio'
 import RadioGroup from './components/radio/Group'

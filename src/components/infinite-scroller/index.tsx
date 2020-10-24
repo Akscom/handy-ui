@@ -12,7 +12,7 @@ export interface PullProps extends PropsType {
   className?: string;
 }
 
-export default class Pull extends PureComponent<PullProps, any> {
+class Pull extends PureComponent<PullProps, any> {
   private pull:any;
 
   private wrap:any;
@@ -430,3 +430,5 @@ export default class Pull extends PureComponent<PullProps, any> {
     );
   }
 }
+
+export default Pull

@@ -1,7 +1,7 @@
 // $import '../style/var';
 @import '../styles/mixins/_hairline';
 
-.van-cell {
+.ha-cell {
   position: relative;
   display: flex;
   box-sizing: border-box;
@@ -96,11 +96,11 @@
     padding-top: $cell-large-vertical-padding;
     padding-bottom: $cell-large-vertical-padding;
 
-    .van-cell__title {
+    .ha-cell__title {
       font-size: $cell-large-title-font-size;
     }
 
-    .van-cell__label {
+    .ha-cell__label {
       font-size: $cell-large-label-font-size;
     }
   }

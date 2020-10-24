@@ -49,7 +49,7 @@ const Star:FC<IRateStarProps>=(props)=>{
     return `${(value * 100) % 100}%`;
   };
 
-  const classes= classNames(`van-rate__item `,{
+  const classes= classNames(`ha-rate__item `,{
     [`${prefix}-rate__icon--full`]: isFull,
     [`${prefix}-rate__icon--half`]: isHalf,
     // [`${prefix}-rate-star-zero`]: isZero,
@@ -63,12 +63,12 @@ const Star:FC<IRateStarProps>=(props)=>{
       onClick={disableEdit ? undefined : handleOnClick}
     >
       {/* <i
-        className='van-icon van-icon-star van-rate__icon'
+        className='ha-icon ha-icon-star ha-rate__icon'
         style={readOnly ? { width: getFloatValue() } : undefined}
       >
       </i> */}
-      <Icon name={icon}  className='van-rate__icon' size={size} />
-      <Icon name={icon}  className='van-rate__icon van-rate__half' size={size} />
+      <Icon name={icon}  className='ha-rate__icon' size={size} />
+      <Icon name={icon}  className='ha-rate__icon ha-rate__half' size={size} />
     </li>
     );
 }

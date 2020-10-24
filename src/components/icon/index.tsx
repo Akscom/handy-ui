@@ -1,7 +1,7 @@
 import React, {FC, useState, ChangeEvent, useEffect, useRef, createContext, MouseEventHandler} from 'react'
 import classNames from 'classnames'
 
-const  prefixCls = 'van'
+const  prefixCls = 'ha'
 
 export interface IconProps{
     name?: string,
@@ -17,19 +17,19 @@ export interface IconProps{
 
 function isImage(name?: string): boolean {
     return name ? name.indexOf('/') !== -1 : false;
-  }
+}
 
 const Icon : FC<IconProps> = (props) => {
     const {name, dot, badge, color, size, className, onClick, ...rest} = props
     const imageIcon = isImage(name)
-    const classes = classNames(`${prefixCls}-icon`, className ,{
+    const classes = classNames(`${prefixCls}-icon` ,{
         [`${prefixCls}-icon-${name}`]: !imageIcon
-    })
+    }, className)
     return (
         <i className={classes} style={{color:color, fontSize: `${size}px`}} onClick={onClick}>
-            {imageIcon && <img className='van-icon__image' src={name} /> }
-            {dot && <div className="van-info van-info--dot"></div>}
-            {badge && <div className="van-info">{ badge }</div>}
+            {imageIcon && <img className='ha-icon__image' src={name} /> }
+            {dot && <div className="ha-info ha-info--dot"></div>}
+            {badge && <div className="ha-info">{ badge }</div>}
         </i>
     )
 }

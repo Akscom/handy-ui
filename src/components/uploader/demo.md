@@ -5,25 +5,37 @@ import Uploader from './components/uploader'
 const App:FC=()=>{
   const data = [{
     url: 'https://zos.alipayobjects.com/rmsportal/PZUUCKTRIHWiZSY.jpeg',
-    id: '2121',
+    status: 'uploading',
+    message: '上传中...',
   }, {
     url: 'https://zos.alipayobjects.com/rmsportal/hqQWgTXdrlmVVYi.jpeg',
-    id: '2122',
+    status: 'failed',
+    message: '上传失败',
   }];
   const [files, setFiles] = useState(data)
 
-  const onChange = (files:any, type:any, index:any) => {
-    console.log(files, type, index);
+  const onChange = (files:any, index:any) => {
+    console.log(files,  index);
     setFiles(files)
+  }
+
+  const onBeforeRead = (arg:any)=>{
+    // return new Promise((resolve, reject) => {
+    //   let img = new File(['foo'], 'https://zos.alipayobjects.com/rmsportal/hqQWgTXdrlmVVYi.jpeg', {
+    //     type: 'image/jpeg',
+    //   });
+    //   resolve(img);
+    // })
+    return true
   }
 
   return (
   <div>
     <Uploader 
     files={files}
-    onChange={onChange}
-    // onImageClick={(index, fs) => console.log(index, fs)}
-    // selectable={files.length < 7}
+    afterRead={onChange}
+    beforeRead={onBeforeRead}
+    // maxCount={4}
     // multiple={false}
     />
   </div>

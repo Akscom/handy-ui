@@ -1,18 +1,17 @@
 # Carousel 走马灯
-
 ```jsx
-import React, { FC, useState , RefObject} from 'react';
+import React, { FC, useState, useRef, RefObject} from 'react';
 import ReactDOM from 'react-dom'
-// import InfiniteScroller from './components/infinite-scroller'
-import { Carousel, Button } from 'zarm';
+import Carousel from './components/carousel'
+import Button from './components/button'
+
 
 const ITEMS = [
-  'https://static.zhongan.com/website/health/zarm/images/banners/1.png',
-  'https://static.zhongan.com/website/health/zarm/images/banners/2.png',
-  'https://static.zhongan.com/website/health/zarm/images/banners/3.png',
+  'https://image1.suning.cn/uimg/cms/img/160327461137381272.jpg?format=_is_1242w_610h',
+  'https://oss.suning.com/adpp/creative_kit/material/picture/20201020-bfc5c9da6948439e97b62e288c74a5eef7b4059ace1149de.jpg?format=_is_1242w_610h',
+  'https://oss.suning.com/aps/aps_learning/iwogh/2020/10/22/12/iwoghBannerPicture/0c8f8cb45dd94aee8d42e1128d03aa1a.png?format=_is_1242w_610h',
 ];
 
-  
 const contentRender = () => {
   return ITEMS.map((item, i) => {
     return (
@@ -24,41 +23,42 @@ const contentRender = () => {
 }
 
 const App:FC=()=>{
-  let domRef:any
+  // const carouselRef = useRef<HTMLDivElement>();
+  const [slideNum , setSlideNum] = useState(0)
+  const [jumpNum , setJumpNum] = useState(0)
+  const containerRef: RefObject<HTMLElement> = useRef(null)
   return (
-    <div style={{width:'100%', overflow: 'hidden'}}>
+    <>
       <Carousel
-        ref={(ref)=> domRef = ref}
+        autoPlay
         loop
         direction="left"
         onChange={(index) => {
           console.log(`onChange: ${index}`);
         }}
+        slideToNum={slideNum}
+        jumpToNum={jumpNum}
       >
         {contentRender()}
       </Carousel>
       <div className="controls">
-        <Button
-          block
-          size="sm"
+        <button
           onClick={() => {
-            domRef.onJumpTo(0);
+            setJumpNum(2)
           }}
         >
           无动画切换指定页
-        </Button>
-
-        <Button
-          block
-          size="sm"
+        </button>
+ 
+        <button
           onClick={() => {
-            domRef.onSlideTo(2);
+            setSlideNum(2)
           }}
         >
           滑动到指定页
-        </Button>
-      </div>
-    </div>
+        </button>
+      </div> 
+    </>
   )
 }
 

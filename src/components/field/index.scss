@@ -1,4 +1,4 @@
-.van-field {
+.ha-field {
   &__label {
     flex: none;
     box-sizing: border-box;
@@ -102,8 +102,8 @@
     cursor: pointer;
   }
 
-  &__left-icon .van-icon,
-  &__right-icon .van-icon {
+  &__left-icon .ha-icon,
+  &__right-icon .ha-icon {
     display: block;
     min-width: 1em;
     font-size: $field-icon-size;
@@ -151,7 +151,7 @@
   }
 
   &--error {
-    .van-field__control {
+    .ha-field__control {
       &,
       &::placeholder {
         color: $field-input-error-text-color;
@@ -161,7 +161,7 @@
   }
 
   &--min-height {
-    .van-field__control {
+    .ha-field__control {
       min-height: $field-text-area-min-height;
     }
   }

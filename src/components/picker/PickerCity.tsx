@@ -5,11 +5,11 @@ import cloneDeep from 'lodash/cloneDeep';
 export type DataSource = Array<{ [key: string]: any; children?: DataSource }>;
 
 interface PickerCityProps {
-    columns?: DataSource;
-    defaultValue?:any;
-    // cascade?:boolean; // 是否联动
-    onChange?:(e:any)=>void;
-    onConfirm?:(e:any)=>void;
+  columns?: DataSource;
+  defaultValue?:any;
+  // cascade?:boolean; // 是否联动
+  onChange?:(e:any)=>void;
+  onConfirm?:(e:any)=>void;
 }
 
 // 判断类型
@@ -163,7 +163,7 @@ const PickerCity:FC<PickerCityProps>=(props)=>{
     
     return (
         <>
-        <div className="van-picker__columns" >
+        <div className="ha-picker__columns" >
           {getColumns()}
         </div>
         </>

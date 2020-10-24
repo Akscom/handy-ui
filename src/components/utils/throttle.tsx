@@ -18,9 +18,7 @@
 
 const throttle=(fn:any, wait = 300)=>{
   let flag = true // 初始化的时候开关为true
-  console.log(flag)
   return function(this:any, ...args:any[]){
-      console.log(flag)
       if(!flag) return   // 开关为false表示不能执行就返回
       flag = false   // 如果可以执行，先把开关设置成false，等seTimeout后执行
       setTimeout(()=>{

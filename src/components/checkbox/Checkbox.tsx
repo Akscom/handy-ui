@@ -2,19 +2,6 @@ import React, {FC, useState, MouseEvent} from 'react'
 import classNames from 'classnames';
 import Cell from '../cell'
 import GroupContext from './GroupContext';
-// import { DisabledContext, IDisabledContext } from '../disabled';
-// import CheckboxGroup from './Group';
-
-// export interface ICheckboxEventTarget extends ICheckboxProps {
-//   type: 'checkbox';
-//   checked: boolean;
-// }
-
-// export interface ICheckboxEvent {
-//   target: ICheckboxEventTarget;
-//   preventDefault(): void;
-//   stopPropagation(): void;
-// }
 
 export interface ICheckboxProps {
   checked?: boolean;
@@ -36,40 +23,9 @@ export interface ICheckboxProps {
   isValueEqual?: (value1: any, value2: any) => boolean;
 }
 
-// function getDisabled(
-//   disabledCtx: IDisabledContext,
-//   groupCtx: ICheckboxContext | null,
-//   props: ICheckboxProps
-// ) {
-//   if (typeof props.disabled === 'boolean') {
-//     return props.disabled;
-//   }
-//   if (groupCtx) {
-//     return groupCtx.disabled;
-//   }
-//   return disabledCtx.value;
-// }
-
-// function getReadOnly(
-//   groupCtx: ICheckboxContext | null,
-//   props: ICheckboxProps
-// ) {
-//   if (typeof props.readOnly === 'boolean') {
-//     return props.readOnly;
-//   }
-//   if (groupCtx) {
-//     return groupCtx.readOnly;
-//   }
-//   return false;
-// }
-
-// export function Checkbox<Value>(props: ICheckboxProps<Value>) {
-
 const Checkbox:FC<ICheckboxProps>=(props)=>{
-  // const disabledCtx = React.useContext(DisabledContext);
   const groupCtx = React.useContext(GroupContext);
   const propsRef = React.useRef(props);
-  // propsRef.current = props;
 
   const {
     checked: _3,
@@ -105,29 +61,7 @@ const Checkbox:FC<ICheckboxProps>=(props)=>{
 
   const [check, setChecked] = useState(checked)
   
-  // const onChangeVal: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(
-  //   evt => {
-  //  console.log(value)
-  //     if (ctxOnChange) { // 如果有group就用group的点击事件
-  //       ctxOnChange(value);
-  //       return;
-  //     } else if (onChange) {
-  //       const e: any = Object.create(evt);
-  //       e.target = {
-  //         ...propsRef.current,
-  //         type: 'checkbox',
-  //         checked: evt.target.checked,
-  //       };
-  //       onChange(e);
-  //     }
-  //   },
-  //   [ctxOnChange, onChange, value]
-  // );
-
   const onChangeVal = (event:  MouseEvent<HTMLElement>) => {
-    // const check = event.currentTarget.getAttribute('aria-checked')
-    // const eventCheck = !!event.currentTarget.getAttribute('aria-checked')
-    // console.log( typeof event.currentTarget.getAttribute('aria-checked'))
     if (disabled) {
       return;
     }
@@ -151,40 +85,29 @@ const Checkbox:FC<ICheckboxProps>=(props)=>{
     }
 };
 
-  const classes = classNames('van-checkbox',{
-    [`van-checkbox--disabled`]: disabled,
-    [`van-checkbox--label-disabled`]: labelDisabled
+  const classes = classNames('ha-checkbox',{
+    [`ha-checkbox--disabled`]: disabled,
+    [`ha-checkbox--label-disabled`]: labelDisabled
   })
-  const iconClasses=classNames('van-checkbox__icon',{
-      [`van-checkbox__icon--round`]: shape!=='square',
-      [`van-checkbox__icon--square`]: shape==='square',
-      [`van-checkbox__icon--checked`]: checked,
-      [`van-checkbox__icon--disabled`]: disabled
+  const iconClasses=classNames('ha-checkbox__icon',{
+      [`ha-checkbox__icon--round`]: shape!=='square',
+      [`ha-checkbox__icon--square`]: shape==='square',
+      [`ha-checkbox__icon--checked`]: checked,
+      [`ha-checkbox__icon--disabled`]: disabled
   })
-  const labelClasses=classNames('van-checkbox__label',{
-      [`van-checkbox__label--disabled`]: disabled
+  const labelClasses=classNames('ha-checkbox__label',{
+      [`ha-checkbox__label--disabled`]: disabled
   })
   const colorStyle = {borderColor: checked? checkedColor:'',backgroundColor:checked? checkedColor:''}
 
   const checkboxRender = (
     <div role="checkbox" tab-index="0" aria-checked={check} className={classes} onClick={onChangeVal} >
         <div className={iconClasses} style={{fontSize: iconSize}}>
-            <i className="van-icon van-icon-success" style={colorStyle}></i>
+            <i className="ha-icon ha-icon-success" style={colorStyle}></i>
         </div>
         { groupCtx && groupCtx.type === 'cell'? null:<span className={labelClasses}>{children}</span>}
     </div>
   );
-
-  // if(labelDisabled){
-  //     return (
-  //         <div role="checkbox" tab-index="0" aria-checked={checked} className={classes}>
-  //             <div className={iconClasses} style={{fontSize: iconSize}}  onClick={onChangeVal}>
-  //                 <i className="van-icon van-icon-success" style={colorStyle}></i>
-  //             </div>
-  //             <span className={labelClasses}>{children}</span>
-  //         </div>
-  //     )
-  // }
 
   if (groupCtx && groupCtx.type === 'cell') {
       return (
@@ -200,7 +123,6 @@ const Checkbox:FC<ICheckboxProps>=(props)=>{
 }
 
 export default Checkbox;
-
 
 /*
 1、子点击：

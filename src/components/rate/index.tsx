@@ -3,8 +3,6 @@ import { Component } from 'react';
 import classNames from 'classnames';
 
 import Star from './Star';
-// import { start } from 'repl';
-// import { DisabledContext, IDisabledContext } from '../disabled';
 
 export interface IRateProps {
   onChange?: (value: number) => void;
@@ -20,7 +18,6 @@ export interface IRateProps {
   icon?: string // 自定义图标
   size?: string | number
 }
-
 
 export interface IRateState extends IRateProps {
   starRefs?: Array<any>;
@@ -121,7 +118,7 @@ Rate.defaultProps = {
   count: 5,
   allowHalf: false,
   allowClear: true,
-  prefix: 'van',
+  prefix: 'ha',
   readOnly: false,
 };
 

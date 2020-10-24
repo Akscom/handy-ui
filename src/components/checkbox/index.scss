@@ -1,4 +1,4 @@
-.van-checkbox {
+.ha-checkbox {
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -24,7 +24,7 @@
     line-height: 1em;
     cursor: pointer;
 
-    .van-icon {
+    .ha-icon {
       display: block;
       box-sizing: border-box;
       width: 1.25em;
@@ -39,13 +39,13 @@
     }
 
     &--round {
-      .van-icon {
+      .ha-icon {
         border-radius: 100%;
       }
     }
 
     &--checked {
-      .van-icon {
+      .ha-icon {
         color: $white;
         background-color: $checkbox-checked-icon-color;
         border-color: $checkbox-checked-icon-color;
@@ -55,14 +55,14 @@
     &--disabled {
       cursor: not-allowed;
 
-      .van-icon {
+      .ha-icon {
         background-color: $checkbox-disabled-background-color;
         border-color: $checkbox-disabled-icon-color;
       }
     }
 
     &--disabled, &--checked {
-      .van-icon {
+      .ha-icon {
         color: $checkbox-disabled-icon-color;
       }
     }
@@ -84,7 +84,7 @@
 }
 
 
-.van-checkbox-group {
+.ha-checkbox-group {
     &--horizontal {
       display: flex;
       flex-wrap: wrap;

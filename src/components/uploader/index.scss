@@ -1,4 +1,6 @@
-.van-uploader {
+@import '../../styles/variables';
+
+.ha-uploader {
   position: relative;
   display: inline-block;
 
@@ -73,13 +75,30 @@
     }
 
     &-delete {
+      // position: absolute;
+      // top: -8px;
+      // right: -8px;
+      // color: $uploader-delete-color;
+      // font-size: $uploader-delete-icon-size;
+      // background-color: $uploader-delete-background-color;
+      // border-radius: 100%;
       position: absolute;
-      top: -8px;
-      right: -8px;
-      color: $uploader-delete-color;
-      font-size: $uploader-delete-icon-size;
-      background-color: $uploader-delete-background-color;
-      border-radius: 100%;
+      top: 0;
+      right: 0;
+      width: 14px;
+      height: 14px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 0 0 0 12px;
+      &-icon {
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        color: #fff;
+        font-size: 16px;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        z-index: 999;
+      }
     }
   }
 
@@ -94,7 +113,8 @@
     align-items: center;
     justify-content: center;
     color: $white;
-    background-color: $uploader-mask-background-color;
+    background: rgba(50, 50, 51, 0.88);
+    // background-color: $uploader-mask-background-color;
     border-radius: $uploader-upload-border-radius;
 
     &-icon {
@@ -140,11 +160,4 @@
       text-align: center;
     }
   }
-}
-
-
-.van-image__img, .van-image__error, .van-image__loading {
-    display: block;
-    width: 100%;
-    height: 100%;
 }

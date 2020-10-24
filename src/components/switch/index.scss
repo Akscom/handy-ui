@@ -1,4 +1,4 @@
-.van-switch {
+.ha-switch {
   position: relative;
   display: inline-block;
   box-sizing: content-box;
@@ -36,11 +36,11 @@
   &--on {
     background-color: $switch-on-background-color;
 
-    .van-switch__node {
+    .ha-switch__node {
       transform: translateX($switch-width - $switch-node-size);
     }
 
-    .van-switch__loading {
+    .ha-switch__loading {
       color: $switch-on-background-color;
     }
   }
