@@ -114,3 +114,15 @@ formData.append('fileHash', state.container.hash) // 5530cc512e2a3ab0652b300f0cd
 ```
 
 [参考例子](https://github.com/sayid760/vue3-vite-template/tree/master/src/components/upload)
+
+
+## 图片压缩上传（在上传之前转换文件）
+1）使用FileReader对象异步读取blob文件，将他转成base64 </br>
+2）通过canvas元素使用一个2D上下文，drawImage绘制图片（传入图片/宽/高），通过canvas.toDataURL转化为base64（传入压缩质量，重点） </br>
+3）atob解析base64转换为byte，再用ArrayBuffer转为二进制 </br>
+4）通过new File实例一个blob对象，append到FormData上，用于上传到服务器 </br>
+```js
+// 核心代码
+ctx.drawImage(img, 0, 0, 200, 200);
+const imageDataURL = canvas.toDataURL(fileObj.type ||'image/jpeg', pictureQuality); 
+```

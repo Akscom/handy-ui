@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="file" name="FileUpload" id="FileUpload" value="上传文件" />
+        <a onclick="uploadFile()">提交</a>
+    </div>
+    <script>
+        //说明：上传文件必须为xls或xlsx格式
+        //input绑定change事件
+        var FileUpload = document.getElementById("FileUpload");
+     
+        //提交
+        function uploadFile(){
+            var fileObj = document.getElementById("FileUpload").files[0]; // js 获取文件对象
+            const pictureQuality = 0.92 // 指定压缩的图片质量,取值范围为0~1,quality值越小,图像越模糊,默认图片质量为0.92
+            console.log(fileObj)
+            const reader = new FileReader();
+            reader.readAsDataURL(fileObj);
+            console.log(reader)
+            reader.onload = () => {
+                // 生成canvas画布
+                const canvas = document.createElement('canvas');
+                // 生成img
+                const img = document.createElement('img');
+                img.src = reader.result;
+                img.onload = () => {
+                    const ctx = canvas.getContext('2d');
+                    // 清除画布
+                    ctx.clearRect(0, 0, 200, 200);
+                    // 绘制图片
+                    ctx.drawImage(img, 0, 0, 200, 200);
+                    const imageDataURL = canvas.toDataURL(fileObj.type ||'image/jpeg', pictureQuality); // 这步是重点
+                    // 去掉URL的头，并转换为byte
+                    const imageBytes = window.atob(imageDataURL.split(',')[1]); // 解析base64
+                    // 处理异常，将ascii码小于0的转换为大于0
+                    const arrayBuffer = new ArrayBuffer(imageBytes.length);
+                    console.log(arrayBuffer)
+                    const uint8Array = new Uint8Array(arrayBuffer);
+                    for (let i = 0; i < imageBytes.length; i++) {
+                        uint8Array[i] = imageBytes.charCodeAt(i);
+                    }
+                    let mimeType = imageDataURL.split(',')[0].match(/:(.*?);/)[1];
+                    let newFile = new File([uint8Array], fileObj.name, {type: mimeType || 'image/jpeg'});
+                    console.log(URL.createobjectURL(newFile))
+
+                    // const img2=document.createElement("img");
+                    // img2.href = URL.createobjectURL(newFile)
+                    // document.appendChild(img2)
+                }
+            }
+        }
+    </script>
+</body>
+</html>
